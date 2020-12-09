@@ -1,0 +1,19 @@
+{
+  "name": "climate_changr_backend",
+  "version": "1.0.0",
+  "description": "An Express server for serving the front-end for the climate_changr application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonsean08/climate_changr.git"
+  },
+  "author": "Brandon Coetzee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brandonsean08/climate_changr/issues"
+  },
+  "homepage": "https://github.com/brandonsean08/climate_changr#readme"
+}
