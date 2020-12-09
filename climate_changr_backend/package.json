@@ -4,7 +4,10 @@
   "description": "An Express server for serving the front-end for the climate_changr application.",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start-client": "cd ../climate_changr_frontend && npm start",
+    "start-server": "nodemon server.js",
+    "start-dev": "concurrently --kill-others-on-fail \"npm run start-server\" \"npm run start-client\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/brandonsean08/climate_changr/issues"
   },
-  "homepage": "https://github.com/brandonsean08/climate_changr#readme"
+  "homepage": "https://github.com/brandonsean08/climate_changr#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
 }
