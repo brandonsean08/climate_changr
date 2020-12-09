@@ -21,7 +21,10 @@
   "homepage": "https://github.com/brandonsean08/climate_changr#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "firebase-admin": "^9.4.1",
     "winston": "^3.3.3"
   },
   "devDependencies": {
