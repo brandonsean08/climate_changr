@@ -30,3 +30,5 @@ const PORT = process.env.PORT || 5000;
 
 // Starting the Express server.
 server.listen(PORT, () => logger.info(`The server has started at ${new Date()} and is running on port: ${PORT}`));
+
+module.exports = server

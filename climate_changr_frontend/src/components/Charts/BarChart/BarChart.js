@@ -152,7 +152,7 @@ function constructTemperatureDifferenceDatasets(actualData, predictedData) {
     if (actualDataItem.length !== 0 && predictedDataItem.length !== 0) {
       let predictedDataItemYearlyAverage = calculateYearlyAverage(predictedDataItem);
       let actualDataItemYearlyAverage = calculateYearlyAverage(actualDataItem);
-      const differenceInTemp = parseFloat((predictedDataItemYearlyAverage - actualDataItemYearlyAverage).toFixed(2));
+      const differenceInTemp = parseFloat((actualDataItemYearlyAverage - predictedDataItemYearlyAverage).toFixed(2));
 
       barChartData.push({
         country: country,
@@ -161,10 +161,7 @@ function constructTemperatureDifferenceDatasets(actualData, predictedData) {
     }
   });
 
-  //barChartData.sort(function (a, b) {
-  //  return b - a;
-  //});
-
+  // Sort the Country data from largest to smallest
   barChartData.sort(function (a, b) {
     return b.difference - a.difference;
   });
@@ -182,11 +179,11 @@ function constructTemperatureDifferenceDatasets(actualData, predictedData) {
     datasets: [
       {
         label: "Difference In Temp",
-        backgroundColor: "#89308E",
-        borderColor: "#89308E",
+        backgroundColor: "#98F5E8",
+        borderColor: "#98F5E8",
         borderWidth: 1,
-        hoverBackgroundColor: "#89308E",
-        hoverBorderColor: "#89308E",
+        hoverBackgroundColor: "#98F5E8",
+        hoverBorderColor: "#98F5E8",
         data: sortedValues,
       },
     ],
