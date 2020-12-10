@@ -4,6 +4,7 @@ require('dotenv').config()
 const cors = require("cors");
 const router = require("./routes/app");
 server.use(cors());
+
 // Importing the winston logger that we have configured.
 const logger = require("./config/logger");
 
@@ -21,7 +22,7 @@ const database = require("./database_context/firebase");
  * by reading from the DB. This is to avoid storing all of the data in memory.
  */
 function seedDatabase() {
-    
+
 }
 
 // Defining the port as 5000 in development if no environment variable is present.

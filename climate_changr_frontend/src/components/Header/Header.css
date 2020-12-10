@@ -1,0 +1,41 @@
+.dropdown-item:hover {
+    cursor:  pointer !important;
+}
+
+.dropdown-item-label:hover {
+    cursor:  pointer !important;
+}
+
+.navbar {
+    background-color: #24E9A9;
+    height: 8vh;
+}
+
+.navbar > button > span {
+    color: white
+}
+
+.navbar > a:hover, li > a:hover {
+    color: white;
+    font-weight: bolder;
+}
+
+.navbar-toggler {
+    color: white;
+}
+
+.navbar-toggler:hover {
+    color: white;
+}
+
+.header-btn-group {
+    display: inline-block;
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+}
+
+.navbar-brand:hover {
+    font-weight: bolder;
+}
