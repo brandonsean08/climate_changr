@@ -9,7 +9,7 @@ server.use(cors());
 const logger = require("./config/logger");
 
 // For production we want to serve the static files that have been bundled in the public directory of the frontend.
-server.use('/', express.static('../climate_changr_frontend/public/build'));
+server.use('/', express.static('../climate_changr_frontend/build'));
 // Connecting all of the routes to the server instance
 server.use("/", router);
 

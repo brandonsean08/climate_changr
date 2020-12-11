@@ -18,7 +18,7 @@ const initState = {
  * @param {object} state The state to set
  * @param {object} action The action defining which part of our state to change
  */
-function rootReducer(state = initState, action) {
+export default function rootReducer(state = initState, action) {
   switch (action.type) {
     case "SET_ACTUAL_CLIMATE_DATA":
       return {
@@ -45,4 +45,4 @@ function rootReducer(state = initState, action) {
   }
 }
 
-module.exports = rootReducer
+//module.exports = rootReducer
