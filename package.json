@@ -1,0 +1,6 @@
+{
+    "scripts": {
+      "heroku-prebuild": "cd climate_changr_frontend && npm install && npm run build && cd ../ && cd climate_changr_backend && npm install",
+      "start": "cd climate_changr_backend && npm run start-server"
+    }
+  }
