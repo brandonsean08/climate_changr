@@ -7,6 +7,7 @@
     "test": "jest",
     "start-client": "cd ../climate_changr_frontend && npm start",
     "start-server": "nodemon server.js",
+    "start": "node server.js",
     "start-dev": "concurrently --kill-others-on-fail \"npm run start-server\" \"npm run start-client\""
   },
   "jest": {
