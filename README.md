@@ -22,13 +22,15 @@ The Backend consists of a Node.js server using the Express framework.
 
 The frontend consists of a React application using Redux for state management.
 
+In a larger production build I would use a bundler like webpack to bundle the static assets but for the case of this app it was not necessary.
+
 # Setup
 
 1) Ensure that you have Node installed on your computer.
 2) Clone the repository.
 3) Open your terminal and run 'cd climate_changr/climate_changr_frontend'
 4) In the same terminal window, run 'npm install'
-5) Once the node_modules have eben installed, run 'cd ../climate_changr_backend'
-6) In the same terminal window run 'npm run start-dev'. This will start the clinet and server at the same time.
+5) Once the node_modules have eben installed, run 'cd ../climate_changr_backend && npm install'
+6) In the same terminal window run 'npm run start-dev'. This will start the client and server at the same time.
 
-View the hosted site here:
+View the hosted site here:https://climate-changr.herokuapp.com/
