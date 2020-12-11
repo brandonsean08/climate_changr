@@ -320,7 +320,6 @@ class BarChart extends Component {
     }
     if (this.props.activeTab !== nextProps.activeTab) {
       if (nextProps.activeTab === "ActualvsPredicted") {
-        console.log(this.state);
         this.setState({
           selectedCountry: this.state.selectedCountry,
           barChartDataSets: constructActualvsPredictedDatasets(
@@ -330,7 +329,6 @@ class BarChart extends Component {
           ),
         });
       } else if (nextProps.activeTab === "Change") {
-        console.log(this.state);
         this.setState({
           activeTab: nextProps.activeTab,
           barChartDataSets: constructTemperatureDifferenceDatasets(
