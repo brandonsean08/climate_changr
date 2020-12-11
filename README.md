@@ -14,6 +14,7 @@ It provides two main 'View Type's':
         biggest to smallest.
 
 2) Month
+    - TO-DO
 
 # Tech Stack:
 
