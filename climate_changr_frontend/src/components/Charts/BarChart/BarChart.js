@@ -23,6 +23,89 @@ function constructActualvsPredictedDatasets(
   let indexOfCountryPredicted = predictedData.findIndex(
     (country) => country.country.name === selectedCountry
   );
+
+  //Setting the actual temperatures dataset
+  const predictedTemperaturesDataset = [
+    actualData[indexOfCountryActual].country.temperatures.averages.January,
+    actualData[indexOfCountryActual].country.temperatures.averages.February,
+    actualData[indexOfCountryActual].country.temperatures.averages.March,
+    actualData[indexOfCountryActual].country.temperatures.averages.April,
+    actualData[indexOfCountryActual].country.temperatures.averages.May,
+    actualData[indexOfCountryActual].country.temperatures.averages.June,
+    actualData[indexOfCountryActual].country.temperatures.averages.July,
+    actualData[indexOfCountryActual].country.temperatures.averages.August,
+    actualData[indexOfCountryActual].country.temperatures.averages.September,
+    actualData[indexOfCountryActual].country.temperatures.averages.October,
+    actualData[indexOfCountryActual].country.temperatures.averages.November,
+    actualData[indexOfCountryActual].country.temperatures.averages.December,
+  ];
+
+  // Setting predicted dataset
+  const actualTemeraturesDataset = [
+    predictedData[indexOfCountryPredicted].country.temperatures.averages
+      .January,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages
+      .February,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages.March,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages.April,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages.May,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages.June,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages.July,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages.August,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages
+      .September,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages
+      .October,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages
+      .November,
+    predictedData[indexOfCountryPredicted].country.temperatures.averages
+      .December,
+  ];
+
+  // Setting the difference dataset
+  const differenceInTemperaturesDataset = [
+    parseFloat(
+      (predictedTemperaturesDataset[0] - actualTemeraturesDataset[0]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[1] - actualTemeraturesDataset[1]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[2] - actualTemeraturesDataset[2]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[3] - actualTemeraturesDataset[3]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[4] - actualTemeraturesDataset[4]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[5] - actualTemeraturesDataset[5]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[6] - actualTemeraturesDataset[6]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[7] - actualTemeraturesDataset[7]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[8] - actualTemeraturesDataset[8]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[9] - actualTemeraturesDataset[9]).toFixed(2)
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[10] - actualTemeraturesDataset[10]).toFixed(
+        2
+      )
+    ),
+    parseFloat(
+      (predictedTemperaturesDataset[11] - actualTemeraturesDataset[11]).toFixed(
+        2
+      )
+    ),
+  ];
+
   return {
     labels: [
       "Jan",
@@ -40,66 +123,35 @@ function constructActualvsPredictedDatasets(
     ],
     datasets: [
       {
+        type: "bar",
         label: "Actual Temp",
         backgroundColor: "#89308E",
         borderColor: "#89308E",
         borderWidth: 1,
         hoverBackgroundColor: "#89308E",
         hoverBorderColor: "#89308E",
-        data: [
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .January,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .February,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .March,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .April,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .May,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .June,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .July,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .August,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .September,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .October,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .November,
-          predictedData[indexOfCountryPredicted].country.temperatures.averages
-            .December,
-        ],
+        data: actualTemeraturesDataset,
       },
       {
+        type: "bar",
         label: "Predicted Temp",
         backgroundColor: "#EA1196",
         borderColor: "#EA1196",
         borderWidth: 1,
         hoverBackgroundColor: "#EA1196",
         hoverBorderColor: "#EA1196",
-        data: [
-          actualData[indexOfCountryActual].country.temperatures.averages
-            .January,
-          actualData[indexOfCountryActual].country.temperatures.averages
-            .February,
-          actualData[indexOfCountryActual].country.temperatures.averages.March,
-          actualData[indexOfCountryActual].country.temperatures.averages.April,
-          actualData[indexOfCountryActual].country.temperatures.averages.May,
-          actualData[indexOfCountryActual].country.temperatures.averages.June,
-          actualData[indexOfCountryActual].country.temperatures.averages.July,
-          actualData[indexOfCountryActual].country.temperatures.averages.August,
-          actualData[indexOfCountryActual].country.temperatures.averages
-            .September,
-          actualData[indexOfCountryActual].country.temperatures.averages
-            .October,
-          actualData[indexOfCountryActual].country.temperatures.averages
-            .November,
-          actualData[indexOfCountryActual].country.temperatures.averages
-            .December,
-        ],
+        data: predictedTemperaturesDataset,
+      },
+      {
+        type: "line",
+        fill: false,
+        label: "Difference Temp",
+        backgroundColor: "#2A2E2F",
+        borderColor: "#2A2E2F",
+        borderWidth: 1,
+        hoverBackgroundColor: "#2A2E2F",
+        hoverBorderColor: "#2A2E2F",
+        data: differenceInTemperaturesDataset,
       },
     ],
   };
@@ -125,7 +177,7 @@ function calculateYearlyAverage(dataItem) {
   sum += dataItem[0].country.temperatures.averages.November;
   sum += dataItem[0].country.temperatures.averages.December;
 
-  return parseFloat((sum/12).toFixed(2))
+  return parseFloat((sum / 12).toFixed(2));
 }
 
 /**
@@ -136,12 +188,14 @@ function calculateYearlyAverage(dataItem) {
 function constructTemperatureDifferenceDatasets(actualData, predictedData) {
   let barChartLabels = [];
 
+  // Creating the list of countries
   actualData.map((country) => {
     barChartLabels.push(country.country.name);
   });
 
+  //Looping through each country and calculating its actual and predicted yearly averges then storing the difference between the
+  //two in an object.
   let barChartData = [];
-
   barChartLabels.map((country) => {
     const predictedDataItem = predictedData.filter((predictedDataCountry) => {
       return predictedDataCountry.country.name === country;
@@ -150,9 +204,15 @@ function constructTemperatureDifferenceDatasets(actualData, predictedData) {
       return actualDataCountry.country.name === country;
     });
     if (actualDataItem.length !== 0 && predictedDataItem.length !== 0) {
-      let predictedDataItemYearlyAverage = calculateYearlyAverage(predictedDataItem);
+      let predictedDataItemYearlyAverage = calculateYearlyAverage(
+        predictedDataItem
+      );
       let actualDataItemYearlyAverage = calculateYearlyAverage(actualDataItem);
-      const differenceInTemp = parseFloat((actualDataItemYearlyAverage - predictedDataItemYearlyAverage).toFixed(2));
+      const differenceInTemp = parseFloat(
+        (actualDataItemYearlyAverage - predictedDataItemYearlyAverage).toFixed(
+          2
+        )
+      );
 
       barChartData.push({
         country: country,
@@ -168,18 +228,26 @@ function constructTemperatureDifferenceDatasets(actualData, predictedData) {
 
   let sortedLabels = [];
   let sortedValues = [];
+  let barChartColors = [];
 
   barChartData.map((country) => {
     sortedLabels.push(country.country);
     sortedValues.push(country.difference);
+    barChartColors.push("#98F5E8");
   });
+
+  // Setting the first bar chart color to be Red as it is the country with the highest difference in temperature
+  barChartColors[0] = "red";
+
+  // Setting the last bar chart color to be Blue as it is the country with the smallest difference in temperature
+  barChartColors[barChartColors.length - 1] = "blue";
 
   return {
     labels: sortedLabels,
     datasets: [
       {
         label: "Difference In Temp",
-        backgroundColor: "#98F5E8",
+        backgroundColor: barChartColors,
         borderColor: "#98F5E8",
         borderWidth: 1,
         hoverBackgroundColor: "#98F5E8",
